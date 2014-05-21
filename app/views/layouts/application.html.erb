@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Details</title>
+	<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %> 
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %> 
+	<%= csrf_meta_tags %> 
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+
+
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top headercolor"> JABONG.COM
+		
+		<% if current_user %>
+		<%= link_to "Sign out", log_out_path,:class => "btn btn-sm btn-default pull-right "%>
+		<%  elsif (controller_name == "sessions") && (action_name == "new") %>
+		<%= link_to 'Sign Up',  sign_up_path, remote: true, :class => "btn btn-sm btn-default pull-right"   %>
+		<%  elsif (controller_name == "users") && (action_name == ("new")) %>
+		<%= link_to 'Sign In', log_in_path, remote: true,:class => "btn btn-sm btn-default pull-right"   %>  
+		<% else %>
+		<%= link_to 'Sign Up',  sign_up_path, remote: true, :class => "btn btn-sm btn-default pull-right"   %>   
+		<%= link_to 'Sign In', log_in_path,remote: true, :class => "btn btn-sm btn-default pull-right"   %>  
+		<% end %>
+		<div class="nav nav-pills pull-left"><%= link_to "Home", root_path %></div>
+		<div class="nav nav-pills pull-right"><%= form_tag articles_path,:method=>'get' do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag "Search"%>
+        <% end %>
+	   </div>
+	   </div>
+
+
+
+	<div class="container">
+
+		<div class="content">
+		<div id="product-modal" class="modal"></div>
+ 
+	<% flash.each do |name, msg| %>
+	<div id="mess" class="bg-info"><button class="close" aria-hidden="true" data-dismiss="modal" type="button">×</button>
+	<%= content_tag :div, msg, :id => "flash#{name}" %>
+	<% end %>
+	</div>
+             
+			<%= yield %>
+
+
+			<div class="footer navbar-fixed-bottom footercolor" >
+				<a href="#">@company 2014</a><br>
+
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

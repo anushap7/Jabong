@@ -1,0 +1,19 @@
+    <ul class="nav nav-tabs" id="myTab">
+    <li class="active"><a href="#">Advertisment</a></li>
+    <li><a href="http://localhost:3000/articles">Inventory</a></li>
+    <li><a href="http://localhost:3000/users/index">Statics</a></li>
+    </ul>
+    <div class="tab-content">
+    <div class="tab-pane active" id="Advertisment"></div>
+    <div class="tab-pane" id="Inventory"></div>
+    <div class="tab-pane" id="Statics"></div>
+    
+    </div>
+    <script>
+    $(function () {
+   
+    $('#myTab li:eq(1) a').tab('show');
+    $('#myTab li:last a').tab('show');
+    })
+    </script>
+<%= image_tag("carti.jpg",:width => 700,:height => 300)%><br/>

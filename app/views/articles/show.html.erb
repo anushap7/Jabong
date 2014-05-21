@@ -1,0 +1,20 @@
+
+ 
+ 	<%= image_tag("blink.gif",:width => 937,:height => 250,:class=>"img-rounded")%>
+ 	<p><strong>Jabong.com</strong> is an Indian fashion and lifestyle e-commerce portal. It retails apparel, footwear, accessories, beauty products, fragrances, home accessories and other fashion and lifestyle products.[2][3] The company is headquartered in Gurgaon, NCR.[4]</p>
+ 	<p>Name is
+ 		<%= @article.name %>
+ 	</p>
+ 	
+ 	<p>Order a item
+ 		<%= @article.item %>
+ 	</p>
+
+ 	<p>Cost for the item is 
+ 		<%= @article.amount %>
+ 	</p>
+ 	<%= link_to 'Add New Order', new_article_path, :class => "btn btn-warning" %>
+
+ 	<%= link_to 'All Orders', articles_path, :class => "btn btn-warning"  %>
+
+

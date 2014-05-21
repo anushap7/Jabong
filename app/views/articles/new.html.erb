@@ -1,0 +1,25 @@
+<h4>Add new Details</h4>
+  <%= form_for :article, url: articles_path,:html => { :id => "new_order"} do |f| %>
+  
+    <div class="form-group">
+      <%= f.label :Name %><br>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :Item %><br>
+      <%= f.text_area :item %>
+    </div>
+    <div class="form-group">
+      <%= f.label :Price %><br>
+      <%= f.text_field :amount %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit 'save' ,:class => "btn btn-warning" %>
+       <%= link_to 'All Orders', articles_path, :class => "btn btn-warning"  %>
+    </div>
+    <% end %>
+   
+
+  

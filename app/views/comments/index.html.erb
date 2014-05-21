@@ -1,0 +1,20 @@
+
+<% Comment.all.each do |c| %>
+<%= c.commenter %></br>
+
+<% c.replies.each do |b| %>
+<%= b.reply %><br/>
+<% end %>
+
+<%= form_for :reply,url:comments_path do |f|%>
+<%= f.text_field :reply %>
+<%= f.submit "Reply" %></br>
+<% end %>
+<% end %>
+
+
+  
+<%= form_for :comments,  url: comments_path do |f|%>
+<%= f.text_field :commenter %>
+<%= f.submit "Add comment" %></br>
+<% end %>
