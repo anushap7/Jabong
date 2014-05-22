@@ -18,6 +18,7 @@ class UsersController < ApplicationController
      impressionist(@user)
 
    end
+   
 
 
   def create
@@ -32,6 +33,7 @@ class UsersController < ApplicationController
   # def after_create(user)
   #   Counter.find_by_name("user_count").increment
   # end
+  
   private
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation, :phonenumber, :city, :state)

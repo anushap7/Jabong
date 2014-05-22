@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "articles/advertisment" => "articles#advertisment"
   post "sign_up_user" => "users#create", :as => "sign_up_user"
   get "comments/index"=> "comments#index"
+  
   resources :users
   resources :sessions
   resources :articles

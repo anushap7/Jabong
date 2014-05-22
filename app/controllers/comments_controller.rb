@@ -8,6 +8,7 @@ end
   def create
   @comment =Comment.new(params[:commenter])
  
+
   if @comment.save
     redirect_to comments_path
   else
